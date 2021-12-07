@@ -1,5 +1,7 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiamVuc3dpbGwiLCJhIjoiY2t1ejgxem9rM2dvajJ2cXJ1OGZjdGxrMCJ9.aoBP_WJJY4s28m07ieP6WQ';
+"use strict";
+
 // importing the map with style
+mapboxgl.accessToken = 'pk.eyJ1IjoiamVuc3dpbGwiLCJhIjoiY2t1ejgxem9rM2dvajJ2cXJ1OGZjdGxrMCJ9.aoBP_WJJY4s28m07ieP6WQ';
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
@@ -10,18 +12,19 @@ const map = new mapboxgl.Map({
 // markers style 
 map.on('load', () => {
 
+    //importing the markers from the backend
     fetch(`http://localhost:3000/api/markers`)
         .then(response => response.json())
         .then(data => {
             map.loadImage(
 
-                './images/poppy_icon.png',
+                '../images/poppy_icon.png',
 
                 (error, image) => {
                     if (error) throw error;
                     map.addImage('poppy', image);
                     //console.log(data);
-                    // Add a data source containing one point feature.
+                    // Add the data source containing one point feature.
                     map.addSource('places', {
                         'type': 'geojson',
                         'data': {
@@ -49,20 +52,19 @@ map.on('load', () => {
         const coordinates = e.features[0].geometry.coordinates.slice();
         const description = e.features[0].properties.description;
 
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
+
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
 
+        //popup of the marker , details and placement
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML(`<h1> ${description} </h1>`)
+            .setHTML(`  ${description} `)
             .addTo(map);
     });
 
-    // Change the cursor to a pointer when the mouse is over the places layer.
+    // Change the cursor to a pointer when the mouse is over the popup
     map.on('mouseenter', 'places', () => {
         map.getCanvas().style.cursor = 'pointer';
     });
@@ -73,5 +75,3 @@ map.on('load', () => {
     });
 
 });
-
-// Code for markers https://docs.mapbox.com/mapbox-gl-js/example/custom-marker-icons/
