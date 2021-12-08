@@ -28,7 +28,7 @@
     width: 45%;
 }
 
-img {
+.imgHeader img {
     float: right;
     max-height: 20%;
     max-width: 20%;
@@ -116,4 +116,35 @@ p {
     font-size: 20px;
     width: 60%;
     /* border-bottom: 2px #626262; */
+}
+
+/* ************** */
+/* About page */
+/* ************* */
+
+.aboutMe {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
+.imageMe {
+    width: 40%;
+}
+
+.imageMe img {
+    max-height: 80%;
+    max-width: 80%;
+}
+
+.who {
+    width: 25%;
+    padding-right: 5%;
+}
+
+.why {
+    padding-right: 5%;
+    width: 25%;
 }
