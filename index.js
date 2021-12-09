@@ -13,7 +13,7 @@ const map = new mapboxgl.Map({
 map.on('load', () => {
 
     //importing the markers from the backend
-    fetch(`https://web2-courseproject-jenswillems.herokuapp.com/api/markers`)
+    fetch(`http://localhost:3000/api/markers`)
         .then(response => response.json())
         .then(data => {
             map.loadImage(

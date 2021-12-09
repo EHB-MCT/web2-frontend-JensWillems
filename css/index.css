@@ -89,15 +89,29 @@ li {
 /* *********** */
 /* marker text */
 /* *********** */
+.marker {
+    display: block;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 0;
+}
+
 h3 {
     font-family: poppins, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
+}
+
+h4 {
+    font-family: poppins, sans-serif;
+    font-size: 16px;
 }
 
 p {
     font-size: 15px;
     font-family: poppins, sans-serif;
 }
+
 
 /* ************** */
 /* sourses page */
