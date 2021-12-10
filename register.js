@@ -80,16 +80,23 @@ async function login() {
 
         })
     });
-    console.log(await response.json());
+    // console.log(await response.json());
 
     if (response.status == 401) {
         window.alert(await response.json())
     } else if (response.status == 200) {
-        // window.alert("User succesfully loged in!")
+        window.alert("User succesfully loged in!")
         document.getElementById("loginForm").style.display = "none";
     }
 }
 
 document.getElementById("loginbtn").addEventListener("click", function () {
     login();
+});
+
+document.getElementById("backbtn").addEventListener("click", function () {
+    document.getElementById("registerForm").style.display = "block";
+    document.getElementById("loginForm").style.display = "none";
+
+
 });

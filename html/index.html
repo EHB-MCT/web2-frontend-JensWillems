@@ -28,9 +28,8 @@
 
         #map {
             position: absolute;
-            /* top: 0; */
             bottom: 0;
-            height: 80%;
+            height: 83%;
             width: 100%;
         }
     </style>
@@ -66,18 +65,17 @@
             <hr>
 
             <label for="email"><b>Email</b></label>
-            <input id="userMail" type="text" placeholder="Enter Email" name="email" id="email" value="Jens@outlook.com"
-                required>
+            <input id="userMail" type="text" placeholder="Enter Email" name="email" id="email" value="" required>
 
             <label for="psw"><b>Password</b></label>
-            <input id="userPW" type="password" placeholder="Enter Password" name="psw" id="psw" value="jens" required>
+            <input id="userPW" type="password" placeholder="Enter Password" name="psw" id="psw" value="" required>
 
             <label for="psw-repeat"><b>Repeat Password</b></label>
             <input id="userPWRepeat" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat"
-                value="jens" required>
+                value="" required>
             <hr>
 
-            <button type="button" id="registerbtn" class="registerbtn">Register</button>
+            <button type="button" id="registerbtn" class="registerbtn">Register!</button>
             <button type="button" id="alreadyLoginbtn" type="submit">Already an account?</button>
         </div>
     </form>
@@ -91,6 +89,7 @@
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" id="loginPW" value="jens" required>
             <button type="button" id="loginbtn" class="loginbtn">Login!</button>
+            <button type="button" id="backbtn" class="backbtn">Go back!</button>
 
         </div>
     </form>

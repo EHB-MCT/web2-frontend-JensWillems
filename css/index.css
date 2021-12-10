@@ -18,7 +18,6 @@
     font-family: teko, sans-serif;
 }
 
-
 .headerDiv {
     display: flex;
     flex-direction: row;
@@ -45,7 +44,7 @@
 }
 
 
-h1 {
+.titleHeader h1 {
     font-size: 45px;
     background-color: #626262;
 }
@@ -60,6 +59,7 @@ h2 {
 .nav {
     height: 50%;
     width: 100%;
+    border-bottom: 3px solid #626262;
 }
 
 ul {
@@ -71,7 +71,7 @@ ul {
 }
 
 li {
-    width: 15%;
+    width: 19%;
     display: inline-block;
     text-align: center;
     padding: 14px 16px;
@@ -79,7 +79,7 @@ li {
 }
 
 .nav a {
-    width: 18%;
+    width: 19%;
     font-size: 25px;
     color: #626262;
     text-decoration: none;
@@ -173,24 +173,36 @@ p {
     width: 25%;
 }
 
+/* *************** */
 /* register form */
-
+/* *************** */
 .registerForm {
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
     background-color: #ddd;
     position: absolute;
     z-index: 5;
+}
+
+.registerForm h1 {
+    font-size: 40px;
+    font-family: poppins, sans-serif;
+    color: #626262;
 }
 
 * {
     box-sizing: border-box
 }
 
-/* Add padding to containers */
 .container {
     padding: 16px;
 }
 
-/* Full-width input fields */
+label {
+    font-family: poppins, sans-serif;
+}
+
 input[type=text],
 input[type=password] {
     width: 100%;
@@ -207,15 +219,13 @@ input[type=password]:focus {
     outline: none;
 }
 
-/* Overwrite default styles of hr */
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
 }
 
-/* Set a style for the submit/register button */
 .registerbtn {
-    background-color: #04AA6D;
+    background-color: red;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
@@ -229,21 +239,18 @@ hr {
     opacity: 1;
 }
 
-/* Add a blue text color to links */
-a {
-    color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
 .signin {
     background-color: #f1f1f1;
     text-align: center;
 }
 
+/* ************ */
 /* login form */
-
-/* Bordered form */
+/* ************ */
 .loginForm {
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
     display: none;
     background-color: #ddd;
     position: absolute;
@@ -264,7 +271,7 @@ input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #04AA6D;
+    background-color: red;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
