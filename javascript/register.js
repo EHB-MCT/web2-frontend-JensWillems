@@ -1,6 +1,6 @@
 "use strict";
 
-
+// Register click event
 document.getElementById("registerbtn").addEventListener("click", function () {
     if (userMail.value == "") {
         window.alert(
@@ -26,7 +26,7 @@ document.getElementById("registerbtn").addEventListener("click", function () {
 
 });
 
-
+// Register information to the backend
 async function register() {
     const userMail = document.getElementById("userMail").value;
     const userPW = document.getElementById("userPW").value;
@@ -56,6 +56,7 @@ async function register() {
     }
 }
 
+// login click event
 document.getElementById("alreadyLoginbtn").addEventListener("click", function () {
     document.getElementById("registerForm").style.display = "none";
     document.getElementById("loginForm").style.display = "block";

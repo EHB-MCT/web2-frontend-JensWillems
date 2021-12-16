@@ -7,8 +7,8 @@
     <title>The Western Front</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 
-    <script src="../index.js" type="module"></script>
-    <script src="../quiz.js" type="module"></script>
+    <script src="../javascript/register.js" type="module"></script>
+    <script src="../javascript/quiz.js" type="module"></script>
     <link rel="stylesheet" href="../css/index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
         <div class="headerDiv">
             <div class="imgHeader">
 
-                <img src="./images/poppy_icon.png" alt="">
+                <img src="../images/poppy_icon.png" alt="">
             </div>
             <div class="titleHeader">
                 <h1>The Western Front</h1>
@@ -34,16 +34,21 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="news.asp">Your scores</a></li>
+                <li><a href="">Your scores</a></li>
                 <li><a href="./index.html">Map</a></li>
-                <li><a href="about.asp">Quiz</a></li>
-                <li><a href="contact.asp">About</a></li>
-                <li><a class="current" href="./sources.html">Sources</a></li>
+                <li><a class="current" href="#">Quiz</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./sources.html">Sources</a></li>
             </ul>
         </div>
     </header>
     <main>
 
+        <div class="quiz" id="quiz"></div>
+
+
+        <button id="submit">Get Results</button>
+        <div id="results"></div>
     </main>
 
 </body>
