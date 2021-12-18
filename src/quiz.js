@@ -105,7 +105,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
         let numCorrect = 0;
 
         // for each question...
-        for (var i = 0; i < questions.length; i++) {
+        for (let i = 0; i < questions.length; i++) {
 
             // find selected answer
             userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
@@ -130,9 +130,24 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
     }
 
     showQuestions(questions, quizContainer);
+    // submitButton.addEventListener('click',()=>{
 
-    submitButton.onclick = function () {
+    // })
+
+    submitButton.onclick = async () => {
         showResults(questions, quizContainer, resultsContainer);
+        const response = await fetch('http://localhost:3000/api/user/updateScore', {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userMail: localStorage.getItem('userMail'),
+                score: resultsContainer.innerHTML
+            })
+        });
+
     }
 
 }

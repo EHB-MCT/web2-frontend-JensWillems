@@ -177,6 +177,7 @@ p {
 /* register form */
 /* *************** */
 .registerForm {
+    display: none;
     margin-left: 30%;
     margin-right: 30%;
     width: 40%;
