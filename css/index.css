@@ -126,27 +126,66 @@ p {
 /* ************** */
 /* sourses page */
 /* ************* */
-.sources ul {
+.sourcesClass {
+    border: 15px solid #6262625e;
+    padding-top: 1.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 2%;
+}
 
+.titleSources {
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-bottom: 3px solid #626262;
+    font-size: 22px;
+    width: 60%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+.sources ul {
     display: flex;
     flex-direction: row;
     border-bottom: 2px #626262;
 }
 
+
 .sources li {
+    text-align: left;
     margin-left: 20%;
     margin-right: 20%;
+    padding-bottom: 1%;
     border-bottom: 3px solid #626262;
     font-size: 20px;
     width: 60%;
+
     /* border-bottom: 2px #626262; */
 }
 
 /* ************** */
 /* About page */
 /* ************* */
+.about {
+    /* border: 15px solid #6262625e; */
+    padding-top: 1.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 2%;
+    /* border: 3px solid #626262; */
+}
+
+.about p {
+    font-size: 20px;
+}
+
+.about h3 {
+    font-size: 26px;
+}
 
 .aboutMe {
+    padding-top: 1.5%;
     margin-left: 20%;
     margin-right: 20%;
     display: flex;
@@ -155,6 +194,8 @@ p {
 }
 
 .imageMe {
+    border: 15px solid #6262625e;
+
     width: 40%;
 }
 
@@ -164,11 +205,16 @@ p {
 }
 
 .who {
+    border: 15px solid #6262625e;
+    padding: 1%;
     width: 25%;
     padding-right: 5%;
 }
 
 .why {
+    padding: 1%;
+    border: 15px solid #6262625e;
+
     padding-right: 5%;
     width: 25%;
 }
@@ -317,12 +363,12 @@ button:hover {
 }
 
 .eachQuestion {
+    padding: 1%;
     border: 15px solid #6262625e;
     width: 50%;
 }
 
 .question {
-
     font-family: poppins, sans-serif;
     font-size: 20pt;
     /* border: 15px solid green; */
