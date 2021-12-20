@@ -5,11 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "npx webpack",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
