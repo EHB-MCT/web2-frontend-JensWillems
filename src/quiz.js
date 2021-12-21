@@ -151,6 +151,3 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
     }
 
 }
-
-
-// Show your score on My score page
