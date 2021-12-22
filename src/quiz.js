@@ -22,9 +22,9 @@ const myQuestions = [{
         answers: {
             a: 'The Germans',
             b: 'The British',
-            c: 'French'
+            c: 'The Belgians'
         },
-        correctAnswer: 'a'
+        correctAnswer: 'c'
     },
     {
         question: "Who had more casulties in the battle of Verdun?",

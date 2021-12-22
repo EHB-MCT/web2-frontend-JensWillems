@@ -405,3 +405,28 @@ button:hover {
     background-color: red;
     opacity: 0.8;
 }
+
+/* ************ */
+/*  Score page  */
+/* ************ */
+
+.scoreContainer {
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    position: absolute;
+    border: 15px solid #6262625e;
+}
+
+.scoreContainer h3 {
+    font-size: 22pt;
+    text-align: center;
+}
+
+.yourScore {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    font-size: 18pt;
+    font-family: poppins, sans-serif;
+}
