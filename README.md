@@ -1,3 +1,16 @@
+Login in on website:
+mail: 
+test@test.com
+password:
+Test123
+
+Database access:
+Username:
+jens
+password:
+jens
+
+
 Java Script
 setting up mapbox and using the token used in index.js:
 https://www.youtube.com/watch?v=OySigNMXOZU&t=211s&ab_channel=WebDevSimplified from 1:00-4:30 
