@@ -1,10 +1,7 @@
 "use strict";
 
-
-
 function checkLoggedIn() {
     const user = localStorage.getItem('userMail');
-    // console.log(user);
     if (!user) {
         document.getElementById("registerForm").style.display = "block";
         // Register click event
@@ -33,9 +30,6 @@ function checkLoggedIn() {
             register();
         });
 
-
-
-        // console.log(document.getElementById("alreadyLoginbtn"));
         // login click event
         document.getElementById("alreadyLoginbtn").addEventListener("click", function () {
             document.getElementById("registerForm").style.display = "none";
@@ -54,14 +48,12 @@ function checkLoggedIn() {
 
         });
 
-
     } else {
 
     }
 };
 
 checkLoggedIn();
-
 
 
 // Register information to the backend
@@ -73,7 +65,7 @@ async function register() {
 
     console.log(userMail, userPW, userPWRepeat);
 
-    const response = await fetch('http://localhost:3000/api/user/register', {
+    const response = await fetch('https://web2-courseproject-jenswillems.herokuapp.com/api/register', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -97,12 +89,10 @@ async function register() {
 
 
 async function login() {
-    // console.log("test");
-
     const loginMail = document.getElementById("loginMail").value;
     const loginPW = document.getElementById("loginPW").value;
 
-    const response = await fetch('http://localhost:3000/api/user/login', {
+    const response = await fetch('https://web2-courseproject-jenswillems.herokuapp.com/api/login', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

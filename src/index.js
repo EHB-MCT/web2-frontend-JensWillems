@@ -11,9 +11,8 @@ const map = new mapboxgl.Map({
 
 // markers style 
 map.on('load', () => {
-
     //importing the markers from the backend
-    fetch(`http://localhost:3000/api/markers`)
+    fetch(`https://web2-courseproject-jenswillems.herokuapp.com/api/markers`)
         .then(response => response.json())
         .then(data => {
             map.loadImage(
@@ -56,19 +55,16 @@ map.on('load', () => {
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
-
         //popup of the marker , details and placement
         new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML(`  ${description} `)
             .addTo(map);
     });
-
     // Change the cursor to a pointer when the mouse is over the popup
     map.on('mouseenter', 'places', () => {
         map.getCanvas().style.cursor = 'pointer';
     });
-
     // Change it back to a pointer when it leaves.
     map.on('mouseleave', 'places', () => {
         map.getCanvas().style.cursor = '';

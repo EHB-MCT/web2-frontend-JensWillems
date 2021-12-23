@@ -1,4 +1,5 @@
 "use strict";
+//quiz questions
 const myQuestions = [{
         question: "Who won the battle of Liège?",
         answers: {
@@ -72,7 +73,6 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
             answers = [];
             for (myQuestions.correctAnswer in questions[i].answers) {
 
-
                 answers.push(
                     '<label>' +
                     '<input type="radio" name="question' + i + '" value="' + myQuestions.correctAnswer + '">' +
@@ -81,8 +81,6 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
                     '</label>'
                 );
             }
-
-            // add this question and its answers to the output
             output.push(
                 '<div class="eachQuestion">' +
                 '<div class="question">' + questions[i].question + '</div>' +
@@ -90,37 +88,28 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
             );
         }
 
-        // finally combine our output list into one string of html and put it on the page
         quizContainer.innerHTML = output.join('');
     }
 
 
     function showResults(questions, quizContainer, resultsContainer) {
 
-        // gather answer containers from our quiz
         var answerContainers = quizContainer.querySelectorAll('.answers');
 
-        // keep track of user's answers
         let userAnswer = '';
         let numCorrect = 0;
 
-        // for each question...
         for (let i = 0; i < questions.length; i++) {
 
-            // find selected answer
             userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
 
-            // if answer is correct
+            //correct
             if (userAnswer === questions[i].correctAnswer) {
-                // add to the number of correct answers
                 numCorrect++;
-
-                // color the answers green
                 answerContainers[i].style.color = 'lightgreen';
             }
-            // if answer is wrong or blank
+            //Wrong
             else {
-                // color the answers red
                 answerContainers[i].style.color = 'red';
             }
         }
@@ -130,13 +119,10 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
     }
 
     showQuestions(questions, quizContainer);
-    // submitButton.addEventListener('click',()=>{
 
-    // })
-
-    submitButton.onclick = async () => {
+    document.getElementById('submit').addEventListener("click", async () => {
         showResults(questions, quizContainer, resultsContainer);
-        const response = await fetch('http://localhost:3000/api/user/updateScore', {
+        const response = await fetch('https://web2-courseproject-jenswillems.herokuapp.com/api/updatescore', {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -147,7 +133,53 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
                 score: resultsContainer.innerHTML
             })
         });
-
-    }
+        await yourScore();
+    })
 
 }
+
+
+// Show your score on My score page
+const yourScore = async () => {
+    const response = await fetch('https://web2-courseproject-jenswillems.herokuapp.com/api/yourscore', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            userMail: localStorage.getItem('userMail'),
+        })
+    });
+
+    const data = await response.json();
+
+    document.getElementById('yourScore').innerHTML = data.score;
+};
+
+
+//Delete your score
+const deleteScore = async () => {
+    document.getElementById("deleteScore").addEventListener("click", async () => {
+        const response = await fetch('https://web2-courseproject-jenswillems.herokuapp.com/api/yourscore', {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userMail: localStorage.getItem('userMail'),
+            })
+        });
+        await yourScore();
+    });
+
+
+};
+
+// loadin the function
+window.addEventListener('load',
+    async () => {
+        await yourScore();
+        await deleteScore();
+    }, false);

@@ -71,7 +71,7 @@ ul {
 }
 
 li {
-    width: 19%;
+    width: 24%;
     display: inline-block;
     text-align: center;
     padding: 14px 16px;
@@ -127,8 +127,8 @@ p {
 /* sourses page */
 /* ************* */
 .sourcesClass {
-    border: 15px solid #6262625e;
     padding-top: 1.5%;
+    border: 15px solid #6262625e;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 2%;
@@ -160,20 +160,16 @@ p {
     border-bottom: 3px solid #626262;
     font-size: 20px;
     width: 60%;
-
-    /* border-bottom: 2px #626262; */
 }
 
 /* ************** */
 /* About page */
 /* ************* */
 .about {
-    /* border: 15px solid #6262625e; */
     padding-top: 1.5%;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 2%;
-    /* border: 3px solid #626262; */
 }
 
 .about p {
@@ -352,6 +348,7 @@ button:hover {
 /* ************ */
 
 .quiz {
+    padding-top: 1.5%;
     margin-left: 10%;
     margin-right: 10%;
     width: 80%;
@@ -411,6 +408,7 @@ button:hover {
 /* ************ */
 
 .scoreContainer {
+
     margin-left: 30%;
     margin-right: 30%;
     width: 40%;
